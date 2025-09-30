@@ -8,9 +8,8 @@ opencv-python
 numpy
 
 # For OCR
-easyocr
-torch
-torchvision
+pytesseract
+Pillow
 
 # For managing environment variables
 python-dotenv

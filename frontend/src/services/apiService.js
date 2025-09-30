@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // The URL of our backend API
-const API_URL = 'http://localhost:8000/api/v1/verify';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1/verify';
 
 /**
  * Uploads a document image to the backend for verification.

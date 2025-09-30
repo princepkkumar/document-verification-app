@@ -1,0 +1,18 @@
+
+# For the web server API
+fastapi
+uvicorn[standard]
+python-multipart
+
+# For AI and image processing
+tensorflow
+opencv-python
+numpy
+
+# For OCR
+easyocr
+torch
+torchvision
+
+# For managing environment variables
+python-dotenv

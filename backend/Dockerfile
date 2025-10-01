@@ -6,8 +6,8 @@ FROM python:3.9-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Install system dependencies, including Tesseract and the missing graphics library for OpenCV
-RUN apt-get update && apt-get install -y tesseract-ocr libgl1-mesa-glx
+# Install system dependencies, including Tesseract and the correct graphics library for OpenCV
+RUN apt-get update && apt-get install -y tesseract-ocr libgl1
 
 # Copy the requirements file into the container
 COPY requirements.txt .

@@ -1,16 +1,10 @@
-# For the web server API
+# backend/requirements.txt
 fastapi
 uvicorn[standard]
 python-multipart
-gunicorn  
-
-# For AI and image processing
+gunicorn
 opencv-python
 numpy
-
-# For OCR
 pytesseract
 Pillow
-
-# For managing environment variables
 python-dotenv

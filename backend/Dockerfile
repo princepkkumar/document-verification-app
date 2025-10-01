@@ -15,18 +15,11 @@ COPY requirements.txt .
 # Install Python libraries
 RUN pip install --no-cache-dir -r requirements.txt
 
-# --- FINAL FIX ---
-# Grant execute permission to the uvicorn command
-RUN chmod +x /root/.local/bin/uvicorn
-
 # Copy the rest of the application source code
 COPY ./src ./src
 
-# Copy the new entrypoint script into the container
-COPY ./entrypoint.sh .
+# Expose the port Render expects
+EXPOSE 10000
 
-# Make the entrypoint script executable
-RUN chmod +x ./entrypoint.sh
-
-# Set the entrypoint script as the command to run when the container starts
-ENTRYPOINT ["./entrypoint.sh"]
+# The command to run the application when the container starts
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "src.main:app", "--bind", "0.0.0.0:10000"]
